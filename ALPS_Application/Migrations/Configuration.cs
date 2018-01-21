@@ -16,6 +16,12 @@ namespace ALPS_Application.Migrations
 
         protected override void Seed(ALPS_Application.Models.DatabaseContext context)
         {
+
+            /*created with Ruby script:
+            require 'csv'
+            d = CSV.read("Migrations/States.txt")
+            d.each_with_index{ |x,i| puts "new USState() { ID = #{i+1}, Name = \"#{x[0]}\", Abbreviation = \"#{x[1]}\" }," }
+            */
             context.USStates.AddOrUpdate(x => x.ID,
                 new USState() { ID = 1, Name = "Alabama", Abbreviation = "AL" },
                 new USState() { ID = 2, Name = "Alaska", Abbreviation = "AK" },
