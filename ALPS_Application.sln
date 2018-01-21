@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALPS_Application", "ALPS_Application\ALPS_Application.csproj", "{52869E5E-110A-4AEA-A9D3-E6801BF3538F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALPS_Application.Tests", "ALPS_Application.Tests\ALPS_Application.Tests.csproj", "{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52869E5E-110A-4AEA-A9D3-E6801BF3538F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52869E5E-110A-4AEA-A9D3-E6801BF3538F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52869E5E-110A-4AEA-A9D3-E6801BF3538F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52869E5E-110A-4AEA-A9D3-E6801BF3538F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBF68B4F-ABC9-4116-8B11-EF8FA0435177}
+	EndGlobalSection
+EndGlobal
