@@ -1,10 +1,7 @@
 namespace ALPS_Application.Migrations
 {
-    using ALPS_Test.Models;
-    using System;
-    using System.Data.Entity;
+    using ALPS_Application.Models;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ALPS_Application.Models.DatabaseContext>
     {
@@ -16,6 +13,10 @@ namespace ALPS_Application.Migrations
 
         protected override void Seed(ALPS_Application.Models.DatabaseContext context)
         {
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data.
 
             /*created with Ruby script:
             require 'csv'
@@ -83,10 +84,13 @@ namespace ALPS_Application.Migrations
                 new USState() { ID = 58, Name = "Puerto Rico", Abbreviation = "PR" },
                 new USState() { ID = 59, Name = "Virgin Islands", Abbreviation = "VI" }
                 );
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+
+            /*
+             context.Offices.AddOrUpdate(x => x.ID,
+                new Office() { ID = 1, City = "Denver", USStateId = "SOMELONGSTRINGAlabama" }
+                );
+                */
         }
     }
 }

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ALPS_Test.Models
+namespace ALPS_Application.Models
 {
     public class USState
     {
@@ -15,12 +11,14 @@ namespace ALPS_Test.Models
         //Data Annotation
         //TODO: Figure out how to do uniqueness
         [Required]
-        [Display(Name = "Name")]
+        [Column(TypeName = "varchar")]
+        [RegularExpression(@"[a-zA-z\s]+", ErrorMessage = "Invalid State Name")]
+        [Display(Name = "State Name")]
         public string Name { get; set; }
 
         [Required]
-        [MinLength(2)]
-        [MaxLength(2)]
+        [Column(TypeName = "varchar")]
+        [StringLength(2, MinimumLength = 2)]
         public string Abbreviation { get; set; }
     }
 }

@@ -1,9 +1,4 @@
-﻿using ALPS_Test.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace ALPS_Application.Models
 {
@@ -16,5 +11,8 @@ namespace ALPS_Application.Models
 
         public DbSet<USState> USStates { get; set; }
 
+        public DbSet<Office> Offices { get; set; }
+
+        public DbSet<Employee> Employees { get; set; }
     }
 }

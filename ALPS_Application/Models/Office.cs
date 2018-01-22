@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ALPS_Application.Models
 {
     public class Office
     {
         [Key]
-        public int id { get; set; }
+        public int ID { get; set; }
 
         [Required]
-        public string city { get; set; }
+        [Column(TypeName ="varchar")]
+        [RegularExpression(@"^[a-zA-Z]+[\s-]?[a-zA-Z]*$", ErrorMessage = "A real cityname please")]
+        public string City { get; set; }
 
         [Required]
-        public int USStateID { get; set; }
+        public virtual USState State { get; set; }
+        public string USStateId { get; set; }
     }
 }

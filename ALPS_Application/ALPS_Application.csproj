@@ -153,6 +153,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OfficesController.cs" />
     <Compile Include="Controllers\USStatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -161,7 +162,16 @@
     <Compile Include="Migrations\201801212305370_InitialCreate.Designer.cs">
       <DependentUpon>201801212305370_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801220428167_OfficeEmployee.cs" />
+    <Compile Include="Migrations\201801220428167_OfficeEmployee.Designer.cs">
+      <DependentUpon>201801220428167_OfficeEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801220445555_Varchar.cs" />
+    <Compile Include="Migrations\201801220445555_Varchar.Designer.cs">
+      <DependentUpon>201801220445555_Varchar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\Office.cs" />
     <Compile Include="Models\USState.cs" />
@@ -248,6 +258,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\USStates\Index.cshtml" />
+    <Content Include="Views\Offices\Create.cshtml" />
+    <Content Include="Views\Offices\Delete.cshtml" />
+    <Content Include="Views\Offices\Details.cshtml" />
+    <Content Include="Views\Offices\Edit.cshtml" />
+    <Content Include="Views\Offices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -266,6 +281,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801212305370_InitialCreate.resx">
       <DependentUpon>201801212305370_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220428167_OfficeEmployee.resx">
+      <DependentUpon>201801220428167_OfficeEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801220445555_Varchar.resx">
+      <DependentUpon>201801220445555_Varchar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
