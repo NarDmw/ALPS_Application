@@ -7,7 +7,7 @@ namespace ALPS_Application.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "ALPS_Application.Models.DatabaseContext";
         }
 
@@ -22,6 +22,7 @@ namespace ALPS_Application.Migrations
             require 'csv'
             d = CSV.read("Migrations/States.txt")
             d.each_with_index{ |x,i| puts "new USState() { ID = #{i+1}, Name = \"#{x[0]}\", Abbreviation = \"#{x[1]}\" }," }
+            d.each_with_index{ |x,i| puts "new Employee() { ID = #{i+1}, FirstName = \"#{x[0]}\", LastName = \"#{x[1]}\", OfficeId = #{rand(4)+1} }," }
             */
             context.USStates.AddOrUpdate(x => x.ID,
                 new USState() { ID = 1, Name = "Alabama", Abbreviation = "AL" },
@@ -85,12 +86,115 @@ namespace ALPS_Application.Migrations
                 new USState() { ID = 59, Name = "Virgin Islands", Abbreviation = "VI" }
                 );
 
-
-            /*
-             context.Offices.AddOrUpdate(x => x.ID,
-                new Office() { ID = 1, City = "Denver", USStateId = "SOMELONGSTRINGAlabama" }
+            context.Offices.AddOrUpdate(x => x.ID,
+                new Office() { ID = 1, City = "Denver", USStateId = 6 },
+                new Office() { ID = 2, City = "Boston", USStateId = 21 },
+                new Office() { ID = 3, City = "San Francisco", USStateId = 5 },
+                new Office() { ID = 4, City = "New York City", USStateId = 32 }
                 );
-                */
+
+            context.Employees.AddOrUpdate(x => x.ID,
+                new Employee() { ID = 1, FirstName = "Terrell", LastName = "Lane", OfficeId = 1 },
+                new Employee() { ID = 2, FirstName = "Carolyn", LastName = "Schmitt", OfficeId = 4 },
+                new Employee() { ID = 3, FirstName = "Mohammad", LastName = "Crane", OfficeId = 3 },
+                new Employee() { ID = 4, FirstName = "Aubrie", LastName = "Mullins", OfficeId = 4 },
+                new Employee() { ID = 5, FirstName = "Slade", LastName = "Madden", OfficeId = 4 },
+                new Employee() { ID = 6, FirstName = "Sydney", LastName = "Hensley", OfficeId = 1 },
+                new Employee() { ID = 7, FirstName = "Athena", LastName = "Reeves", OfficeId = 2 },
+                new Employee() { ID = 8, FirstName = "Brayden", LastName = "Prince", OfficeId = 1 },
+                new Employee() { ID = 9, FirstName = "Landyn", LastName = "Holloway", OfficeId = 2 },
+                new Employee() { ID = 10, FirstName = "Tara", LastName = "Mayer", OfficeId = 1 },
+                new Employee() { ID = 11, FirstName = "Aidyn", LastName = "Willis", OfficeId = 4 },
+                new Employee() { ID = 12, FirstName = "Sterling", LastName = "Sweeney", OfficeId = 2 },
+                new Employee() { ID = 13, FirstName = "Landin", LastName = "Flynn", OfficeId = 4 },
+                new Employee() { ID = 14, FirstName = "Lane", LastName = "Rowland", OfficeId = 4 },
+                new Employee() { ID = 15, FirstName = "Lorenzo", LastName = "Doyle", OfficeId = 3 },
+                new Employee() { ID = 16, FirstName = "Selina", LastName = "Fields", OfficeId = 1 },
+                new Employee() { ID = 17, FirstName = "Nathanael", LastName = "Villarreal", OfficeId = 3 },
+                new Employee() { ID = 18, FirstName = "Clinton", LastName = "Bentley", OfficeId = 3 },
+                new Employee() { ID = 19, FirstName = "Valery", LastName = "Monroe", OfficeId = 3 },
+                new Employee() { ID = 20, FirstName = "Kai", LastName = "Giles", OfficeId = 4 },
+                new Employee() { ID = 21, FirstName = "Joseph", LastName = "Nixon", OfficeId = 4 },
+                new Employee() { ID = 22, FirstName = "Nathalia", LastName = "Herrera", OfficeId = 1 },
+                new Employee() { ID = 23, FirstName = "Rodrigo", LastName = "Mercado", OfficeId = 1 },
+                new Employee() { ID = 24, FirstName = "Arielle", LastName = "Ellison", OfficeId = 3 },
+                new Employee() { ID = 25, FirstName = "Alannah", LastName = "Hanna", OfficeId = 4 },
+                new Employee() { ID = 26, FirstName = "Keira", LastName = "Watkins", OfficeId = 1 },
+                new Employee() { ID = 27, FirstName = "Roberto", LastName = "Parks", OfficeId = 4 },
+                new Employee() { ID = 28, FirstName = "Cooper", LastName = "Foster", OfficeId = 3 },
+                new Employee() { ID = 29, FirstName = "Brian", LastName = "Strickland", OfficeId = 3 },
+                new Employee() { ID = 30, FirstName = "Lacey", LastName = "Vaughan", OfficeId = 2 },
+                new Employee() { ID = 31, FirstName = "Tate", LastName = "James", OfficeId = 3 },
+                new Employee() { ID = 32, FirstName = "Maryjane", LastName = "Henderson", OfficeId = 4 },
+                new Employee() { ID = 33, FirstName = "Graham", LastName = "Peters", OfficeId = 4 },
+                new Employee() { ID = 34, FirstName = "Darren", LastName = "Cummings", OfficeId = 3 },
+                new Employee() { ID = 35, FirstName = "Alexia", LastName = "Alvarez", OfficeId = 1 },
+                new Employee() { ID = 36, FirstName = "Renee", LastName = "Ponce", OfficeId = 2 },
+                new Employee() { ID = 37, FirstName = "Brennen", LastName = "Howell", OfficeId = 2 },
+                new Employee() { ID = 38, FirstName = "Martha", LastName = "Benitez", OfficeId = 2 },
+                new Employee() { ID = 39, FirstName = "Andre", LastName = "Wood", OfficeId = 2 },
+                new Employee() { ID = 40, FirstName = "Keegan", LastName = "Joseph", OfficeId = 2 },
+                new Employee() { ID = 41, FirstName = "Winston", LastName = "Robertson", OfficeId = 3 },
+                new Employee() { ID = 42, FirstName = "Arthur", LastName = "Cordova", OfficeId = 1 },
+                new Employee() { ID = 43, FirstName = "Maximilian", LastName = "English", OfficeId = 4 },
+                new Employee() { ID = 44, FirstName = "Mikaela", LastName = "Holden", OfficeId = 1 },
+                new Employee() { ID = 45, FirstName = "Caitlin", LastName = "Sandoval", OfficeId = 1 },
+                new Employee() { ID = 46, FirstName = "Donna", LastName = "Spence", OfficeId = 1 },
+                new Employee() { ID = 47, FirstName = "Josie", LastName = "Chavez", OfficeId = 2 },
+                new Employee() { ID = 48, FirstName = "Brylee", LastName = "Anderson", OfficeId = 4 },
+                new Employee() { ID = 49, FirstName = "Lydia", LastName = "Maxwell", OfficeId = 3 },
+                new Employee() { ID = 50, FirstName = "Elena", LastName = "Black", OfficeId = 4 },
+                new Employee() { ID = 51, FirstName = "Enzo", LastName = "Hayden", OfficeId = 3 },
+                new Employee() { ID = 52, FirstName = "Gillian", LastName = "Hess", OfficeId = 1 },
+                new Employee() { ID = 53, FirstName = "Addison", LastName = "Mejia", OfficeId = 4 },
+                new Employee() { ID = 54, FirstName = "Broderick", LastName = "Ingram", OfficeId = 3 },
+                new Employee() { ID = 55, FirstName = "Karlee", LastName = "Castro", OfficeId = 2 },
+                new Employee() { ID = 56, FirstName = "Jason", LastName = "Carter", OfficeId = 1 },
+                new Employee() { ID = 57, FirstName = "Dario", LastName = "Fernandez", OfficeId = 3 },
+                new Employee() { ID = 58, FirstName = "Ava", LastName = "Ellis", OfficeId = 4 },
+                new Employee() { ID = 59, FirstName = "Colton", LastName = "Pope", OfficeId = 2 },
+                new Employee() { ID = 60, FirstName = "Autumn", LastName = "Villegas", OfficeId = 4 },
+                new Employee() { ID = 61, FirstName = "Taylor", LastName = "Hardy", OfficeId = 3 },
+                new Employee() { ID = 62, FirstName = "Frances", LastName = "Duke", OfficeId = 3 },
+                new Employee() { ID = 63, FirstName = "Madelyn", LastName = "Chandler", OfficeId = 1 },
+                new Employee() { ID = 64, FirstName = "Eliezer", LastName = "Wilcox", OfficeId = 1 },
+                new Employee() { ID = 65, FirstName = "Eve", LastName = "Roy", OfficeId = 4 },
+                new Employee() { ID = 66, FirstName = "Emilee", LastName = "Jimenez", OfficeId = 2 },
+                new Employee() { ID = 67, FirstName = "Andreas", LastName = "Herman", OfficeId = 3 },
+                new Employee() { ID = 68, FirstName = "Douglas", LastName = "Li", OfficeId = 2 },
+                new Employee() { ID = 69, FirstName = "Cash", LastName = "Lang", OfficeId = 4 },
+                new Employee() { ID = 70, FirstName = "Tiana", LastName = "Lynn", OfficeId = 3 },
+                new Employee() { ID = 71, FirstName = "Zander", LastName = "Choi", OfficeId = 4 },
+                new Employee() { ID = 72, FirstName = "Finn", LastName = "Zhang", OfficeId = 2 },
+                new Employee() { ID = 73, FirstName = "Zaria", LastName = "Stanley", OfficeId = 2 },
+                new Employee() { ID = 74, FirstName = "Christian", LastName = "Garrison", OfficeId = 1 },
+                new Employee() { ID = 75, FirstName = "Willie", LastName = "Hooper", OfficeId = 2 },
+                new Employee() { ID = 76, FirstName = "Chaim", LastName = "Arroyo", OfficeId = 1 },
+                new Employee() { ID = 77, FirstName = "Elyse", LastName = "Blackwell", OfficeId = 4 },
+                new Employee() { ID = 78, FirstName = "Case", LastName = "Cortez", OfficeId = 2 },
+                new Employee() { ID = 79, FirstName = "Adelyn", LastName = "Adams", OfficeId = 1 },
+                new Employee() { ID = 80, FirstName = "Darien", LastName = "Bradley", OfficeId = 4 },
+                new Employee() { ID = 81, FirstName = "Kendrick", LastName = "Moses", OfficeId = 1 },
+                new Employee() { ID = 82, FirstName = "Keagan", LastName = "Ho", OfficeId = 1 },
+                new Employee() { ID = 83, FirstName = "Konnor", LastName = "Gross", OfficeId = 1 },
+                new Employee() { ID = 84, FirstName = "Kaylie", LastName = "Whitaker", OfficeId = 3 },
+                new Employee() { ID = 85, FirstName = "Avery", LastName = "Maynard", OfficeId = 4 },
+                new Employee() { ID = 86, FirstName = "Liam", LastName = "Burch", OfficeId = 4 },
+                new Employee() { ID = 87, FirstName = "Brendon", LastName = "Mendoza", OfficeId = 4 },
+                new Employee() { ID = 88, FirstName = "Andrea", LastName = "Harding", OfficeId = 3 },
+                new Employee() { ID = 89, FirstName = "Stanley", LastName = "Arellano", OfficeId = 4 },
+                new Employee() { ID = 90, FirstName = "Hector", LastName = "Gonzalez", OfficeId = 2 },
+                new Employee() { ID = 91, FirstName = "Harrison", LastName = "Cruz", OfficeId = 2 },
+                new Employee() { ID = 92, FirstName = "Albert", LastName = "Curry", OfficeId = 3 },
+                new Employee() { ID = 93, FirstName = "Deacon", LastName = "Crawford", OfficeId = 2 },
+                new Employee() { ID = 94, FirstName = "Deegan", LastName = "Gomez", OfficeId = 1 },
+                new Employee() { ID = 95, FirstName = "Salvatore", LastName = "Strong", OfficeId = 3 },
+                new Employee() { ID = 96, FirstName = "Leonidas", LastName = "Winters", OfficeId = 2 },
+                new Employee() { ID = 97, FirstName = "Hunter", LastName = "Shields", OfficeId = 2 },
+                new Employee() { ID = 98, FirstName = "Bridger", LastName = "Douglas", OfficeId = 2 },
+                new Employee() { ID = 99, FirstName = "Kash", LastName = "Benson", OfficeId = 2 },
+                new Employee() { ID = 100, FirstName = "Rosa", LastName = "Joyce", OfficeId = 2 }
+                );
         }
     }
 }

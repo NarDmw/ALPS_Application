@@ -11,6 +11,14 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+
+        <div>
+            @Html.ActionLink("View Offices", "Index", "Offices")
+        </div>
+        <div>
+            @Html.ActionLink("View Employees", "Index", "Employees")
+        </div>
+
         <footer>
             <p>&copy; @DateTime.Now.Year - ALPS Inc. Job Application - Nelson Chiu</p>
         </footer>

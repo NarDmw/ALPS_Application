@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ALPS_Application.Models
@@ -10,11 +11,14 @@ namespace ALPS_Application.Models
 
         [Required]
         [Column(TypeName ="varchar")]
-        [RegularExpression(@"^[a-zA-Z]+[\s-]?[a-zA-Z]*$", ErrorMessage = "A real cityname please")]
+        [RegularExpression(@"^[a-zA-Z]+([\s-]?[a-zA-Z]+)*$", ErrorMessage = "A real cityname please")]
         public string City { get; set; }
 
         [Required]
-        public virtual USState State { get; set; }
-        public string USStateId { get; set; }
+        [Display(Name="US Stat!!e")]
+        public int USStateId { get; set; }
+        public virtual USState USState { get; set; }
+
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

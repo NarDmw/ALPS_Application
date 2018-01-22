@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ALPS_Application.Models
@@ -20,5 +21,7 @@ namespace ALPS_Application.Models
         [Column(TypeName = "varchar")]
         [StringLength(2, MinimumLength = 2)]
         public string Abbreviation { get; set; }
+
+        public virtual ICollection<Office> Offices { get; set; }
     }
 }

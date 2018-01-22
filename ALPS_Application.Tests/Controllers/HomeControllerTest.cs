@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ALPS_Application;
 using ALPS_Application.Controllers;
-
+/*
 namespace ALPS_Application.Tests.Controllers
 {
     [TestClass]
@@ -26,3 +26,4 @@ namespace ALPS_Application.Tests.Controllers
         }
     }
 }
+*/

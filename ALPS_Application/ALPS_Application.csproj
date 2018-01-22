@@ -152,23 +152,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\OfficesController.cs" />
     <Compile Include="Controllers\USStatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801212305370_InitialCreate.cs" />
-    <Compile Include="Migrations\201801212305370_InitialCreate.Designer.cs">
-      <DependentUpon>201801212305370_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801220428167_OfficeEmployee.cs" />
-    <Compile Include="Migrations\201801220428167_OfficeEmployee.Designer.cs">
-      <DependentUpon>201801220428167_OfficeEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801220445555_Varchar.cs" />
-    <Compile Include="Migrations\201801220445555_Varchar.Designer.cs">
-      <DependentUpon>201801220445555_Varchar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -190,7 +178,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Migrations\USA_States.txt" />
+    <Content Include="Migrations\SeedData\RandomNames.txt" />
+    <Content Include="Migrations\SeedData\USA_States.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -247,7 +236,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -260,9 +248,13 @@
     <Content Include="Views\USStates\Index.cshtml" />
     <Content Include="Views\Offices\Create.cshtml" />
     <Content Include="Views\Offices\Delete.cshtml" />
-    <Content Include="Views\Offices\Details.cshtml" />
     <Content Include="Views\Offices\Edit.cshtml" />
     <Content Include="Views\Offices\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -277,17 +269,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801212305370_InitialCreate.resx">
-      <DependentUpon>201801212305370_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801220428167_OfficeEmployee.resx">
-      <DependentUpon>201801220428167_OfficeEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801220445555_Varchar.resx">
-      <DependentUpon>201801220445555_Varchar.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
