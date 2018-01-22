@@ -13,6 +13,7 @@ namespace ALPS_Test.Models
         public int ID { get; set; }
 
         //Data Annotation
+        //TODO: Figure out how to do uniqueness
         [Required]
         [Display(Name = "Name")]
         public string Name { get; set; }
@@ -22,9 +23,4 @@ namespace ALPS_Test.Models
         [MaxLength(2)]
         public string Abbreviation { get; set; }
     }
-
-    //public class USStateDBContext : DbContext
-    //{
-    //    public DbSet<USState> USStates { get; set; }
-    //}
 }
