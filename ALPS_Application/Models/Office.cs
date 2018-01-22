@@ -15,7 +15,7 @@ namespace ALPS_Application.Models
         public string City { get; set; }
 
         [Required]
-        [Display(Name="US Stat!!e")]
+        [Display(Name="US State")]
         public int USStateId { get; set; }
         public virtual USState USState { get; set; }
 
