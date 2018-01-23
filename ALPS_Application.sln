@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALPS_Application", "ALPS_Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALPS_Application.Tests", "ALPS_Application.Tests\ALPS_Application.Tests.csproj", "{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALPS_Application_DAL", "ALPS_Application_DAL\ALPS_Application_DAL.csproj", "{F4CDB673-449A-48A3-9149-A820A65C576D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALPS_Application_API", "ALPS_Application_API\ALPS_Application_API.csproj", "{8787523D-5CFF-4095-8DDC-7743CD4A9F8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6CF3C7A-13A8-413F-9CB2-A956F0A9EB82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4CDB673-449A-48A3-9149-A820A65C576D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4CDB673-449A-48A3-9149-A820A65C576D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4CDB673-449A-48A3-9149-A820A65C576D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4CDB673-449A-48A3-9149-A820A65C576D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8787523D-5CFF-4095-8DDC-7743CD4A9F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8787523D-5CFF-4095-8DDC-7743CD4A9F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8787523D-5CFF-4095-8DDC-7743CD4A9F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8787523D-5CFF-4095-8DDC-7743CD4A9F8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

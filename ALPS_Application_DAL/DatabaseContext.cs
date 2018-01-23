@@ -4,7 +4,7 @@ namespace ALPS_Application.Models
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext() : base("SampleDatabase")
+        public DatabaseContext() : base(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\NarDmw\source\repos\ALPS_Application\ALPS_Application\App_Data\SampleDatabase.mdf;Integrated Security=True")
         {
 
         }

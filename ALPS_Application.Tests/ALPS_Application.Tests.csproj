@@ -103,6 +103,10 @@
       <Project>{52869E5E-110A-4AEA-A9D3-E6801BF3538F}</Project>
       <Name>ALPS_Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ALPS_Application_DAL\ALPS_Application_DAL.csproj">
+      <Project>{f4cdb673-449a-48a3-9149-a820a65c576d}</Project>
+      <Name>ALPS_Application_DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

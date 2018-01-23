@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using DataTables;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using ALPS_Application.Models;
 
@@ -13,6 +10,32 @@ namespace ALPS_Application.Controllers
     public class OfficesController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
+
+        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
+        public ActionResult Table()
+        {
+            var settings = Properties.Settings.Default;
+            var formData = HttpContext.Request.Form;
+
+            return View();
+            //using (var db = new DataTables.Database(settings.DbType, settings.DbConnection))
+            //{
+            //    var response = new Editor(db, "Office")
+            //        .Model<Office>()
+            //        .Field(new Field("start_date")
+            //        .Validator(Validation.DateFormat(Format.DATE_ISO_8601,
+            //        new ValidationOpts { Message = "Please enter a date in the format yyyy-mm-dd" }
+            //        ))
+            //        .GetFormatter(Format.DateSqlToFormat(Format.DATE_ISO_8601))
+            //        .SetFormatter(Format.DateFormatToSql(Format.DATE_ISO_8601))
+            //        )
+            //        .Process(formData)
+            //        .Data();
+
+            //    return Json(response, JsonRequestBehavior.AllowGet);
+            //}
+        }
+
 
         // GET: Offices
         public ActionResult Index()
