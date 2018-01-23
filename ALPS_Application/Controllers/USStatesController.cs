@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using ALPS_Application.Models;
+using System.Linq;
 using System.Web.Mvc;
-using ALPS_Application.Models;
+
 
 namespace ALPS_Application.Controllers
 {

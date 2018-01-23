@@ -14,11 +14,12 @@ namespace ALPS_Application.Models
         [Required]
         [Column(TypeName = "varchar")]
         [RegularExpression(@"[a-zA-z\s]+", ErrorMessage = "Invalid State Name")]
-        [Display(Name = "State Name")]
+        [Display(Name = "State")]
         public string Name { get; set; }
 
         [Required]
         [Column(TypeName = "varchar")]
+        [Display(Name = "ST")]
         [StringLength(2, MinimumLength = 2)]
         public string Abbreviation { get; set; }
 

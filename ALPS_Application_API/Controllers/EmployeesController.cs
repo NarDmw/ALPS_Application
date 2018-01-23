@@ -9,44 +9,44 @@ using System.Web.Http.Description;
 
 namespace ALPS_Application_API.Controllers
 {
-    public class OfficesController : ApiController
+    public class EmployeesController : ApiController
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: api/Offices
-        public IQueryable<Office> GetOffices()
+        // GET: api/Employees
+        public IQueryable<Employee> GetEmployees()
         {
-            return db.Offices;
+            return db.Employees;
         }
 
-        // GET: api/Offices/5
-        [ResponseType(typeof(Office))]
-        public IHttpActionResult GetOffice(int id)
+        // GET: api/Employees/5
+        [ResponseType(typeof(Employee))]
+        public IHttpActionResult GetEmployee(int id)
         {
-            Office office = db.Offices.Find(id);
-            if (office == null)
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            return Ok(office);
+            return Ok(employee);
         }
 
-        // PUT: api/Offices/5
+        // PUT: api/Employees/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutOffice(int id, Office office)
+        public IHttpActionResult PutEmployee(int id, Employee employee)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != office.ID)
+            if (id != employee.ID)
             {
                 return BadRequest();
             }
 
-            db.Entry(office).State = EntityState.Modified;
+            db.Entry(employee).State = EntityState.Modified;
 
             try
             {
@@ -54,7 +54,7 @@ namespace ALPS_Application_API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OfficeExists(id))
+                if (!EmployeeExists(id))
                 {
                     return NotFound();
                 }
@@ -67,35 +67,35 @@ namespace ALPS_Application_API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Offices
-        [ResponseType(typeof(Office))]
-        public IHttpActionResult PostOffice(Office office)
+        // POST: api/Employees
+        [ResponseType(typeof(Employee))]
+        public IHttpActionResult PostEmployee(Employee employee)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Offices.Add(office);
+            db.Employees.Add(employee);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = office.ID }, office);
+            return CreatedAtRoute("DefaultApi", new { id = employee.ID }, employee);
         }
 
-        // DELETE: api/Offices/5
-        [ResponseType(typeof(Office))]
-        public IHttpActionResult DeleteOffice(int id)
+        // DELETE: api/Employees/5
+        [ResponseType(typeof(Employee))]
+        public IHttpActionResult DeleteEmployee(int id)
         {
-            Office office = db.Offices.Find(id);
-            if (office == null)
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            db.Offices.Remove(office);
+            db.Employees.Remove(employee);
             db.SaveChanges();
 
-            return Ok(office);
+            return Ok(employee);
         }
 
         protected override void Dispose(bool disposing)
@@ -107,9 +107,9 @@ namespace ALPS_Application_API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool OfficeExists(int id)
+        private bool EmployeeExists(int id)
         {
-            return db.Offices.Count(e => e.ID == id) > 0;
+            return db.Employees.Count(e => e.ID == id) > 0;
         }
     }
 }

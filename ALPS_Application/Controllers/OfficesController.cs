@@ -1,9 +1,11 @@
-﻿using DataTables;
+﻿using ALPS_Application.Models;
+using DataTables;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web.Mvc;
-using ALPS_Application.Models;
+
 
 namespace ALPS_Application.Controllers
 {
@@ -14,28 +16,26 @@ namespace ALPS_Application.Controllers
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         public ActionResult Table()
         {
+            //TODO
+            var request = System.Web.HttpContext.Current.Request;
             var settings = Properties.Settings.Default;
-            var formData = HttpContext.Request.Form;
+            using (var db = new DataTables.Database(settings.DbType, settings.DbConnection))
+            {
+                var response = new Editor(db, "offices")
+                    .Model<JoinModelOffices>("offices")
+                    .Model<JoinModelUSStates>("usstates")
+                    .Field(new Field("offices.usstate")
+                        .Options(new Options()
+                            .Table("usstates")
+                            .Value("id")
+                            .Label("name")
+                        ))
+                    .Process(request)
+                    .Data();
 
-            return View();
-            //using (var db = new DataTables.Database(settings.DbType, settings.DbConnection))
-            //{
-            //    var response = new Editor(db, "Office")
-            //        .Model<Office>()
-            //        .Field(new Field("start_date")
-            //        .Validator(Validation.DateFormat(Format.DATE_ISO_8601,
-            //        new ValidationOpts { Message = "Please enter a date in the format yyyy-mm-dd" }
-            //        ))
-            //        .GetFormatter(Format.DateSqlToFormat(Format.DATE_ISO_8601))
-            //        .SetFormatter(Format.DateFormatToSql(Format.DATE_ISO_8601))
-            //        )
-            //        .Process(formData)
-            //        .Data();
-
-            //    return Json(response, JsonRequestBehavior.AllowGet);
-            //}
+                return Json(response);
+            }
         }
-
 
         // GET: Offices
         public ActionResult Index()

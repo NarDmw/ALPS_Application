@@ -25,7 +25,9 @@ namespace ALPS_Application.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SampleDatabase;Integrated Security=True;Connect Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SampleDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\NarDmw\\source\\repos\\" +
+            "ALPS_Application\\ALPS_Application\\App_Data\\SampleDatabase.mdf;Integrated Securit" +
+            "y=True")]
         public string DbConnection {
             get {
                 return ((string)(this["DbConnection"]));
